@@ -11,9 +11,14 @@ export const styles = StyleSheet.create({
     backgroundColor: '#0D0D0D',
     padding: 24,
   },
+  logoContainer: {
+    width: '45%',
+  },
   logo: {
     marginTop: 46,
-    alignSelf: 'flex-start',
+    maxWidth: '100%',
+    maxHeight: '100%'
+
   },
   subTitle: {
     marginTop:16,

@@ -1,16 +1,26 @@
+import { useNavigation } from "@react-navigation/native";
 import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
 import { styles } from './styles';
 
 export default function Home() {
+
+  const navigation = useNavigation();
+
+  function handleVinos(){
+    navigation.navigate('drinkList')
+  }
+
   return(
     <>
       <View style={styles.container}>
       <View style={styles.content}>
-        <Image 
-            source={require('../../images/logo.png')}
-            style={styles.logo}
-          />
-          <Text style={styles.subTitle}>Inventário creado para el control de los vinos de enso alicante</Text>
+        <View style={styles.logoContainer}>
+          <Image 
+                source={require('../../images/logo.png')}
+                style={styles.logo}
+            />
+        </View>          
+        <Text style={styles.subTitle}>Inventário creado para el control de los vinos de enso alicante</Text>
           
           <View style={styles.form}>
             <TextInput 
@@ -20,6 +30,7 @@ export default function Home() {
               keyboardType='default'
               />
             <TouchableOpacity
+
               style={styles.button}
             >
             <Text style={styles.buttonText}>
@@ -29,7 +40,10 @@ export default function Home() {
         </View>
       </View>
       <View style={styles.listContent}>
-          <TouchableOpacity style={styles.square}>
+          <TouchableOpacity 
+            style={styles.square}
+            onPress={handleVinos}
+          >
             <Image
               source={require('../../images/vino.png')}
               style={styles.squareLogo}
