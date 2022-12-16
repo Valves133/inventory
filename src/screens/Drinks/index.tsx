@@ -1,29 +1,33 @@
-import { Text, TouchableOpacity, View } from 'react-native'
+import { Image, Text, TouchableOpacity, View, FlatList,ScrollView } from 'react-native'
+import { Header } from '../../Components/Header'
 import { styles } from './styles'
 
 export default function Drinks() {
+  const drinkList = ['Vinos blanco', 'Vinos tinto', 'Vino rosado', 'Cavas y champangne', 'Sakes', 'Licores', 'Refrescos']
   return(
       <>
+          
         <View style={styles.container}>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.textoButton}> Vino blanco</Text>
-          </TouchableOpacity>
+          <Header />
 
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.textoButton}> Vino Tintos</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.textoButton}>Cavas y Champagne</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.textoButton}>Sake</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.textoButton}>Licores</Text>
-          </TouchableOpacity>
+          <View style={styles.listContent}>
+          <View style={styles.content}>
+            <FlatList 
+            data={drinkList}
+            keyExtractor={item => item}
+            renderItem={({item}) => (
+                <TouchableOpacity style={styles.button} key={item}>
+                  <Image 
+                  source={require('../../images/vino.png')}
+                  style={styles.icon}
+                  />
+                  <Text style={styles.name}> {item}</Text>
+                </TouchableOpacity>
+              )}
+              showsVerticalScrollIndicator={false}
+            />
+          </View>
+          </View>
 
         </View>
       </>
