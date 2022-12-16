@@ -7,12 +7,13 @@ export function Header(){
      <View style={styles.content}>
         <View style={styles.logoContainer}>
           <Image 
-                source={require('../../images/logo.png')}
+                source={require('../../images/logo2.png')}
                 style={styles.logo}
             />
+         <Text style={styles.title}>Enso</Text>
         </View>          
         <Text style={styles.subTitle}>Inventário creado para el control de los vinos de enso alicante</Text>
-          
+
           <View style={styles.form}>
             <TextInput 
               style={styles.input} 

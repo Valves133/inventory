@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#191919',
+    background: require('../../images/enso.jpg'),
   },
   listContent: {
     flex: 1,

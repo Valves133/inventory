@@ -8,17 +8,26 @@ export const styles = StyleSheet.create({
     padding: 24,
   },
   logoContainer: {
-    width: '45%',
+    height: '42.5%',
+    width: '20%',
+    flexWrap:'wrap',
+    marginVertical: 16,
   },
   logo: {
-    marginTop: 46,
+    marginRight: 16,
     maxWidth: '100%',
     maxHeight: '100%'
   
   },
+  title: {
+    color: '#FFFFFF',
+    fontSize: 70,
+    fontFamily: 'Cormorant_400Regular'
+  },
   subTitle: {
-    marginTop:16,
-    color: '#ccc'
+    color: '#ccc',
+    fontFamily: 'Cormorant_400Regular',
+    fontSize: 16
   },
   input: {
     flex: 1,
