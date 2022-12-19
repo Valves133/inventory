@@ -1,9 +1,14 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+  image: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
   container: {
     flex: 1,
-    backgroundColor: '#272727',
+    backgroundColor: 'rgba(0,0,0,0.75)',
   },
   
   listContent: {

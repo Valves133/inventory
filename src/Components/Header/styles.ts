@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   content: {
     flex: 1,
     maxHeight: '27.5%',
-    backgroundColor: '#000000',
+    // backgroundColor: 'rgba(0,0,0,0.75)',
     padding: 24,
   },
   logoContainer: {

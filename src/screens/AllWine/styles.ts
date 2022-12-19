@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
     padding: 16,
   },
   button: {
-    marginBottom: 16,
+    marginBottom: 8,
     padding: 8,
     borderRadius: 6,
     backgroundColor: '#9fa3a9',
@@ -32,8 +32,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   icon: {
-    maxWidth: 64,
-    height: 64,
+    maxWidth:32,
+    height: 32,
   },
   name: {
     color: '#393d42',

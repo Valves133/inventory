@@ -4,8 +4,9 @@ import { Image, Text, TouchableOpacity, View, FlatList, ImageBackground } from '
 import { Header } from '../../Components/Header'
 import { styles } from './styles'
 
-export default function Drinks() {
+export default function AddWine() {
   const drinkList = ['Vinos blanco', 'Vinos tinto', 'Vino rosado', 'Cavas y champangne', 'Sakes', 'Licores', 'Refrescos']
+  
   const navigation = useNavigation();
 
   function handleVinos(){

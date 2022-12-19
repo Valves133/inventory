@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, Image, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, Image, TextInput, TouchableOpacity, ImageBackground } from "react-native";
 import { Header } from "../../Components/Header";
 import { styles } from './styles';
 
@@ -11,8 +11,14 @@ export default function Home() {
     navigation.navigate('drinkList')
   }
 
+  function handleAddVinos(){
+    navigation.navigate('addwine')
+  }
+
   return(
     <>
+     <ImageBackground source={require('../../images/enso.jpg')} style={styles.image}>
+
       <View style={styles.container}>
         <Header />
      
@@ -28,7 +34,10 @@ export default function Home() {
             <Text style={styles.textSquare}>Listar vinos</Text>
           </TouchableOpacity>
           
-          <TouchableOpacity style={styles.square}>
+          <TouchableOpacity 
+            style={styles.square}
+            onPress={handleAddVinos}
+            >
           <Image
               source={require('../../images/vino.png')}
               style={styles.squareLogo}
@@ -53,6 +62,7 @@ export default function Home() {
           </TouchableOpacity>
         </View>
       </View>
+      </ImageBackground>
     </>
   )
 }
