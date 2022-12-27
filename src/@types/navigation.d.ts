@@ -5,6 +5,7 @@ export declare global {
       drinkList: undefined;
       addwine: undefined;
       allwine: undefined;
+      bottle: { drinkId: string };
     }
   }
 }

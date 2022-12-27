@@ -2,6 +2,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import AddWine from '../screens/AddWine';
 import AllWine from '../screens/AllWine';
+import { Bottle } from '../screens/Bottle';
 import Drinks from '../screens/Drinks';
 import Home from '../screens/Home/';
 
@@ -25,6 +26,10 @@ export function AppRoutes() {
        <Screen 
         name = 'allwine'
         component={AllWine} 
+      />
+      <Screen 
+        name= 'bottle'
+        component={Bottle}
       />
     </Navigator>
   )
