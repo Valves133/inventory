@@ -1,5 +1,6 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { Image, Text, View } from "react-native";
+import { Image, ImageBackground, Text, TouchableOpacity, View } from "react-native";
+import { Header } from "../../Components/Header";
 
 import { styles } from './styles'
 
@@ -55,43 +56,71 @@ export function Bottle(){
   const route = useRoute();
 
   const { drinkId } =  route.params as RouteParamsProps;
-  console.log('id ', drinkId)
+
+  function handleGoBack(){
+    navigation.goBack();
+  }
   return(
     <>
-      <View style={styles.container}>
-        <Image />
-        <View style={styles.content} >
-          <View style={styles.containerImage}>  
-            <Image 
-              source={drinkList[+drinkId - 1].url} 
-              style={styles.image}
-            />
+      <ImageBackground source={require('../../images/enso.jpg')} style={styles.image}>
+
+        <View style={styles.container}>
+        <View style={styles.header}>
+          <View style={styles.arrow}>
+              <TouchableOpacity 
+                  onPress={handleGoBack}
+                  style={styles.back}
+                >
+                <Image 
+                  source={require('../../images/arrow.png')} 
+                  style={{height: 20, width: 20}}
+                />
+              </TouchableOpacity> 
+            </View>
+
+            <View style={styles.logoContainer}>
+              <Image 
+                    source={require('../../images/logo2.png')}
+                    style={styles.logo}
+                />
+              <Text style={styles.titleLogo}>Enso</Text>
+            </View>  
           </View>
-          <View>
-            <Text style={styles.title}>
-              {drinkList[+drinkId - 1].name}
+             
+
+            <View style={styles.content}>
+              <View style={styles.containerImage}>  
+                <Image 
+                  source={drinkList[+drinkId - 1].url} 
+                  style={styles.imageWine}
+                />
+            </View>
+            <View>
+              <Text style={styles.title}>
+                {drinkList[+drinkId - 1].name}
+              </Text>
+              <Text style={styles.subTitle}>
+              {drinkList[+drinkId - 1].denominacion}
+              </Text>
+              <Text style={styles.text}>
+                Uvas:  {drinkList[+drinkId - 1].grape}
+              </Text>
+              <Text style={styles.text}>
+                Precio de compra: <Text style={styles.bold}> {drinkList[+drinkId - 1].price}</Text>
+              </Text>
+            </View>
+            </View>
+
+          <View style={styles.contentProvider}>
+            <Text style={styles.textProvider}>
+              Provedor: 
             </Text>
-            <Text style={styles.subTitle}>
-            {drinkList[+drinkId - 1].denominacion}
+            <Text style={styles.textStock}>
+              Armazén: 12
             </Text>
-            <Text style={styles.text}>
-              Uvas:  {drinkList[+drinkId - 1].grape}
-            </Text>
-            <Text style={styles.text}>
-              Precio de compra: <Text style={styles.bold}> {drinkList[+drinkId - 1].price}</Text>
-            </Text>
-           
           </View>
         </View>
-        <View>
-          <Text>
-            Provedor: 
-          </Text>
-          <Text>
-            Armazén: 12
-          </Text>
-        </View>
-      </View>
+      </ImageBackground>
     </>
    
   );

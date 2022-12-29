@@ -1,23 +1,67 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
+  image: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
   container: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.75)',
   },
-  content: {
+  header: {
+    width: '100%',
+    backgroundColor: 'rgba(38,38,38,0.75)',
+    flexDirection: 'row',
+    alignItems: "center",
+    justifyContent: 'space-between',
+    padding: 32,
+    paddingBottom:16,
+  },
+  arrow: {
+    width: 48,
+    height: 48
+  },
+  back: {
+    width: '120%',
+    height: '120%',
     padding: 16,
-    backgroundColor: '#FFFFFF',
+  },
+  logoContainer: {
+    marginLeft: -32,
+    width: '100%',
     flexDirection: 'row',
     justifyContent: 'center',
+    alignItems: "center",
+  },
+  logo: {
+    width: 40,
+    height: 36,
+    marginRight: 16
+  },
+  titleLogo: {
+    fontFamily: 'Cormorant_400Regular',
+    fontSize: 32,
+    color: '#FFFFFF'
+  },
+ 
+ 
+  content: {
+    backgroundColor: 'rgba(255,255,255,0.625)',
+    maxHeight:'65%',
+    padding: 16,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: "center"
   },
   containerImage: {
-    maxWidth:  '20%' ,
-    maxHeight:'60%',
+    maxWidth:  '25%' ,
+    maxHeight:'75%',
     borderRadius: 6,
     marginRight: 48
   },
-  image: {
+  imageWine: {
     maxWidth: '100%',
     maxHeight: '100%',
     borderRadius: 6
@@ -39,4 +83,17 @@ export const styles = StyleSheet.create({
   bold: {
     fontFamily: 'Cormorant_700Bold',
   },
+  contentProvider: {
+    
+  },
+  textProvider: {
+    color: '#FFFFFF',
+    fontFamily: 'Cormorant_400Regular',
+    fontSize: 24,
+  },
+  textStock: {
+    color: '#FFFFFF',
+    fontFamily: 'Cormorant_400Regular',
+    fontSize: 24,
+  }
 });
